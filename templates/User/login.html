@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Вход на сайт</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Войти</button>
+    </form>
+    {% endblock %}
+
+    <a href="/registration/" class="btn">Registration</a>
+
+</body>
+</html>
