@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "User",
     "Profile",
+    "TelegramBot",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "User.User"
+
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+
+TELEGRAM_API_TOKEN = "8441532759:AAFiT6OoA2ZH9ND24ArCqW2_5YoHh3ljjy4"

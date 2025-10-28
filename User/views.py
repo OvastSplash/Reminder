@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
 from .forms import UserLoginForm, UserRegistrationForm
 
+
 def index(request):
     return HttpResponse("Добро пожаловать в Reminder!")
 

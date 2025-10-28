@@ -7,9 +7,17 @@
 <body>
     {% block content %}
     <h1>Запланируйте задачу</h1>
+
+    {% if request.user.telegram_id %}
+        <p>✅ Ваш Telegram ID: {{ request.user.telegram_id }}</p>
+    {% else %}
+        <p>❌ Telegram не подключён.</p>
+        <a href="https://t.me/remindertest123_bot?start={{ request.user.id }}">Подключить Telegram</a>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p}}
+        {{ form.as_p }}
         <button type="submit">Запланировать</button>
     </form>
     {% endblock %}
